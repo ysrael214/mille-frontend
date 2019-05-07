@@ -1,0 +1,162 @@
+<html>
+	<head>
+		<title>Mille</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+		 <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body{
+				font-family: 'Lato', sans-serif;
+			}
+
+			.noselect,.material-icons{
+				 user-select: none;
+		        -moz-user-select: none;
+		        -khtml-user-select: none;
+		        -webkit-user-select: none;
+		        -o-user-select: none;
+			}
+
+			.site-container{
+				height: 100vh;
+			}
+
+
+			.btn{
+				transition: 0.4s ease-in-out;
+			}
+
+			.btn:focus, .btn:active{
+				outline: none !!important;
+				box-shadow: none !important;
+			}
+
+			.btn:active{
+				border-width: 1em;
+				transition: 0.15s ease-in-out;
+			}
+
+			.btn:hover{
+				background-color: transparent;
+			}
+
+			.lock{
+				min-height: 150px;
+				min-width: 150px;
+				
+			}
+
+			.lock div{
+				font-size: 3em;
+			}
+
+			.gradient-bg{
+				background: #171819; /* Old browsers */
+				background: -moz-linear-gradient(top, #171819 0%, #001426 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, #171819 0%,#001426 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, #171819 0%,#001426 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#171819', endColorstr='#001426',GradientType=0 ); /* IE6-9 */
+			}
+
+			.container{
+				transition: 0.15s ease-out;
+			}
+
+			.lock-icon{
+				transition: 0.25s ease-out;
+			}
+
+			.btn .lock-icon-anim{
+				transform: rotate(360deg);
+			}
+		</style>
+	</head>
+	<body class="gradient-bg text-light">
+		<nav class="navbar  position-fixed w-100">
+			<div class="px-3 py-2 d-flex justify-content-between w-100">
+			    <a class="navbar-brand text-light" href="#">
+			    	<div class="noselect d-flex">
+				    	<i class="material-icons my-auto"><h1 class="h1 m-0">lock</h1></i>
+				    	<div class="d-flex flex-column my-auto ml-2">
+				    		<span class="h5 m-0 font-weight-bold text-primary">MILLE</span>
+				    		<small class="text-small font-weight-light">DCS Smart Locker</small>
+				    	</div>
+				    </div>
+			    </a>
+
+			    <div class="menu d-flex my-auto">
+			    	<span class="mx-3">
+			    		Admin
+			    	</span>
+			    	<span class="mx-3">
+			    		Users
+			    	</span>
+
+			    	<span class="mx-3">
+			    		Login
+			    	</span>
+			    </div>
+			</div>
+		</nav>
+		<div class="site-container">
+			<div class="container d-flex h-100">
+				<div class="row m-0 w-100">
+					<div class="col-lg-6 d-flex">
+						<div class="m-auto d-flex flex-column">
+							<button type="button" class="btn btn-outline-primary mx-auto my-3 rounded-circle d-flex lock">
+								<i class="material-icons animated-icon m-auto"><div class="m-auto lock-icon ani">lock</div></i>
+							</button>
+
+							<p class="mx-auto">Your locker is currently <span class="d-block text-center lock-status font-weight-bold text-primary">LOCKED</span></p>
+						</div>
+					</div>
+					<div class="col-lg-6 d-flex flex-column">
+						<div class="my-auto">
+							<div class="d-inline-flex">
+								<i class="material-icons my-auto">history</i>
+								<span class="my-auto mx-2">History</span> 
+							</div>
+							<div class="d-flex">
+								<div style="height: 20px;width:20px" class="bg-primary rounded-circle my-3">
+								</div>
+								<div class="d-flex flex-column my-auto mx-2">
+									<h6 class="my-auto font-weight-bold">LOCKED</h6>
+									<small>Web</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+		<script>
+
+
+
+			$(".lock").click(function(){
+				$(".lock").toggleClass('btn-outline-primary');
+				$(".lock").toggleClass('btn-outline-danger');
+				$(".lock-status").toggleClass('text-primary');
+				$(".lock-status").toggleClass('text-danger');
+				$(".lock-icon").toggleClass('lock-icon-anim');
+				
+				if($(".lock-icon").html() == "lock"){
+					$(".lock-icon").html("lock_open");
+					$(".lock-status").html("UNLOCKED");
+				}
+				else{
+					$(".lock-icon").html("lock");
+					$(".lock-status").html("LOCKED");
+				}
+			});
+
+		</script>
+	</body>
+</html>
